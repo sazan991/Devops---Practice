@@ -1,0 +1,32 @@
+--building docker image from docker file
+
+docker build -t <docker_image:version> <path_to_docker_file>
+e.g for backend: 
+go into backed directory
+docker build -t backend:v1 .
+
+similarly do for fronted
+
+--running docker container from image
+
+docker run -p host_port:docker_port <image_name:version_name>
+
+NOTE: docker port here is the port where your app server is running e.g. 8000 for django
+for backend: 
+
+docker run -p 8000:8000 backend:v1
+
+-- for docker compose:
+
+docker-compose up --build
+
+in some OS: command might be:
+
+docker compose up --build
+
+-- for ssh
+
+ssh -i <pem_file_location> username@public_ip_address
+
+username for ubuntu: ubuntu
+username for amazon linux: ec2-user
